@@ -1,10 +1,6 @@
 <h1 class= "text-center">Articles</h1>
 
 
-<button class="btn-primary">
-  <%= link_to "New Article", new_article_path, class: "link-without-style"%>
-</button>
-
 <%= link_to new_article_path do%>
   <i class="fas fa-pen-fancy"></i>
 <%end %>
@@ -15,7 +11,10 @@
 <% @articles.each do |article| %>
   <h6> <%= article.title %></h6>
   <div>
-    <a><%= link_to "Read more", article_path(article.id) %></a>
+    <%= link_to article_path(article.id) do %>
+      <i class="far fa-eye"></i>
+    <% end %>
+    </a>
   </div>
   <p>_____________</p>
 <% end %>
